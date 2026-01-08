@@ -241,3 +241,32 @@ footer{
   color:#b77a7a;
   background:#f6ece6;
 }
+
+/* ===== MOBILE SLIDESHOW FIX ===== */
+@media (max-width: 768px) {
+
+  .carousel {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .track-wrapper {
+    overflow: hidden;
+  }
+
+  .track {
+    gap: 0;
+  }
+
+  .track img {
+    min-width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .nav {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+}

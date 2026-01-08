@@ -78,3 +78,32 @@ function openMessage(){
 function closeMessage(){
   document.getElementById("messageOverlay").classList.remove("show");
 }
+
+// ===== Swipe Support for Carousel =====
+document.querySelectorAll(".track-wrapper").forEach((wrapper, index) => {
+  let startX = 0;
+  let currentX = 0;
+  let isDown = false;
+
+  wrapper.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+    isDown = true;
+  });
+
+  wrapper.addEventListener("touchmove", e => {
+    if (!isDown) return;
+    currentX = e.touches[0].clientX;
+  });
+
+  wrapper.addEventListener("touchend", () => {
+    if (!isDown) return;
+    const diff = startX - currentX;
+
+    if (Math.abs(diff) > 40) {
+      // Swipe left = next, swipe right = previous
+      move(index + 1, diff > 0 ? 1 : -1);
+    }
+
+    isDown = false;
+  });
+});
