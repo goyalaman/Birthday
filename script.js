@@ -1,4 +1,4 @@
-const target = new Date("January 8, 2026 19:33:30");
+const target = new Date("January 8, 2026 22:15:30");
 
 const btn = document.getElementById("surpriseBtn");
 let unlocked = false;
