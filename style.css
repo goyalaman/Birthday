@@ -1,0 +1,243 @@
+body{
+  margin:0;
+  font-family:'Montserrat',sans-serif;
+  background:#f6ece6;
+}
+
+/* ---------- Stage System ---------- */
+
+.stage{ display:none; min-height:100vh; }
+.stage.active{ display:block; }
+
+/* ---------- Hero Countdown ---------- */
+
+.hero-bg{
+  background:url("assets/Pic65.JPG") center/cover no-repeat;
+  position:relative;
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    rgba(0,0,0,.35),
+    rgba(0,0,0,.45)
+  );
+  backdrop-filter: blur(1px);
+}
+
+.center{
+  position:relative;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  text-align:center;
+}
+
+.name{ font-size:4.5rem; font-family:'Great Vibes',cursive; }
+.subtitle{ font-family:'Oleo Script',cursive; font-size:1.4rem; }
+
+/* ---------- Countdown ---------- */
+
+.countdown{
+  display:flex;
+  gap:18px;
+  margin:30px 0;
+}
+
+.countdown div{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  border:2px solid #f2cfcf;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  background:rgba(255,255,255,.15);
+}
+
+.countdown span{ font-size:1.6rem; }
+
+/* ---------- Buttons ---------- */
+
+button{
+  padding:12px 35px;
+  border-radius:30px;
+  border:none;
+  background:#d18b8b;
+  color:white;
+  cursor:pointer;
+}
+
+/* ---------- Stage 2 ---------- */
+
+.hero{
+  padding:80px 20px;
+  text-align:center;
+}
+
+.big{ font-size:3.5rem; font-family:'Great Vibes',cursive; }
+.tagline{ font-family:'Happy Monkey',cursive; }
+
+/* ---------- Slideshow ---------- */
+
+.slider{ display:flex; justify-content:center; }
+
+.carousel{
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+.track-wrapper{
+  width:900px;
+  overflow:hidden;
+}
+
+.track{
+  display:flex;
+  gap:25px;
+  transition:.6s ease;
+}
+
+.track img{
+  width:280px;
+  height:360px;
+  object-fit:cover;
+  border-radius:18px;
+  box-shadow:0 12px 30px rgba(0,0,0,.15);
+  background:#000;
+}
+
+
+/* ---------- Nav Buttons ---------- */
+
+.nav{
+  background:#d5a5a5;
+  color:white;
+  border:none;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  font-size:1.4rem;
+  cursor:pointer;
+  box-shadow:0 5px 15px rgba(0,0,0,.25);
+}
+
+/* ---------- Message ---------- */
+
+.message{
+  max-width:600px;
+  margin:60px auto;
+  text-align:center;
+  font-size:1.1rem;
+}
+
+button:disabled{
+  background:#bfa5a5;
+  cursor:not-allowed;
+  opacity:.7;
+}
+
+button.unlocked{
+  background:#d18b8b;
+  box-shadow:0 0 20px rgba(209,139,139,.6);
+  animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+  0%{box-shadow:0 0 0 rgba(209,139,139,.5);}
+  50%{box-shadow:0 0 20px rgba(209,139,139,.8);}
+  100%{box-shadow:0 0 0 rgba(209,139,139,.5);}
+}
+
+.slideshow { display:none; text-align:center; }
+.slideshow.active { display:block; }
+
+.slideshow h2 {
+  font-family: 'Oleo Script', cursive;
+  margin-bottom:20px;
+}
+
+.nextBtn{
+  margin-top:25px;
+  padding:10px 30px;
+  border-radius:30px;
+  border:none;
+  background:#d18b8b;
+  color:white;
+  cursor:pointer;
+}
+
+.track img.wide{
+  width:360px;
+}
+
+.backBtn{
+  margin:20px 10px 0;
+  padding:8px 25px;
+  border-radius:25px;
+  border:none;
+  background:#c5a1a1;
+  color:white;
+  cursor:pointer;
+}
+
+.backBtn:hover, .nextBtn:hover{
+  opacity:.85;
+}
+
+.slideshow{
+  opacity:0;
+  transform:translateY(20px);
+  transition:.6s ease;
+}
+
+.slideshow.active{
+  opacity:1;
+  transform:translateY(0);
+}
+#messageOverlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.5);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  opacity:0;
+  pointer-events:none;
+  transition:.5s ease;
+}
+
+#messageOverlay.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.messageBox{
+  background:#f9efe9;
+  padding:50px;
+  border-radius:25px;
+  max-width:600px;
+  text-align:center;
+  transform:scale(.8);
+  transition:.5s ease;
+}
+
+#messageOverlay.show .messageBox{
+  transform:scale(1);
+}
+.slider{
+  margin-bottom:120px;
+}
+footer{
+  padding:30px 10px;
+  text-align:center;
+  font-family:'Great Vibes', cursive;
+  font-size:1.4rem;
+  color:#b77a7a;
+  background:#f6ece6;
+}
